@@ -10,6 +10,7 @@ export const Nav = styled.nav`
   font-weight: 700;
   position: sticky;
   top: 0;
+  z-index: 10;
 
   .logoVini {
     font-size: 1.5rem;
@@ -21,10 +22,11 @@ export const Nav = styled.nav`
 
   ul {
     display: flex;
+    list-style: none;
   }
 
   ul li {
-    list-style: none;
+    margin: 0 0.5rem;
   }
 
   ul li a {
@@ -32,7 +34,6 @@ export const Nav = styled.nav`
     text-decoration: none;
     color: white;
     padding: 0.5rem;
-    margin: 0 0.5rem;
     border-radius: 0.5rem;
   }
 
@@ -50,6 +51,7 @@ export const Nav = styled.nav`
     width: 2.25rem;
     height: 2rem;
     cursor: pointer;
+    z-index: 11;
   }
 
   .menu span {
@@ -107,23 +109,31 @@ export const Nav = styled.nav`
     }
 
     ul {
-      display: none;
-      flex-direction: column;
+      position: absolute;
+      top: 4rem;
+      left: 0;
       width: 100%;
-      margin-bottom: 0.25rem;
+      background-color: #0d0d0d;
+      flex-direction: column;
+      align-items: center;
+      transition: max-height 0.3s ease-in-out;
+      max-height: 0;
+      overflow: hidden;
+      z-index: 9;
     }
 
     ul.open {
-      display: flex;
+      max-height: 20rem;
     }
 
     ul li {
       width: 100%;
       text-align: center;
+      margin: 0;
     }
 
     ul li a {
-      margin: 0.2rem 0.5rem;
+      margin: 0.2rem 0;
     }
   }
 `;
